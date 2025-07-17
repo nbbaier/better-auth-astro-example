@@ -15,7 +15,7 @@ import {
 } from "./ui/otp-field";
 import { twoFactorActions } from "@/libs/auth-client";
 
-export function TwoFactorComponent() {
+function TwoFactorComponent() {
 	const [otp, setOTP] = createSignal("");
 
 	createEffect(() => {
@@ -98,7 +98,7 @@ export function TwoFactorEmail() {
 					onError(context) {
 						alert(context.error.message);
 					},
-					onSuccess(context) {
+					onSuccess(_context) {
 						window.location.href = "/dashboard";
 					},
 				},
@@ -123,7 +123,7 @@ export function TwoFactorEmail() {
 								onClick={async () => {
 									await twoFactorActions.sendOtp({
 										fetchOptions: {
-											onSuccess(context) {
+											onSuccess(_context) {
 												setSentEmail(true);
 											},
 											onError(context) {

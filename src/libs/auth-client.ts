@@ -11,9 +11,9 @@ export const {
 	twoFactor: twoFactorActions,
 	$Infer,
 	updateUser,
-	changePassword,
+	
 	revokeSession,
-	revokeSessions,
+	
 } = createAuthClient({
 	baseURL:
 		process.env.NODE_ENV === "development"

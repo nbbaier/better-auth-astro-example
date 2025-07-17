@@ -7,8 +7,8 @@ import { splitProps } from "solid-js";
 
 export const CheckboxLabel = CheckboxPrimitive.Label;
 export const Checkbox = CheckboxPrimitive;
-export const CheckboxErrorMessage = CheckboxPrimitive.ErrorMessage;
-export const CheckboxDescription = CheckboxPrimitive.Description;
+const CheckboxErrorMessage = CheckboxPrimitive.ErrorMessage;
+const CheckboxDescription = CheckboxPrimitive.Description;
 
 type checkboxControlProps<T extends ValidComponent = "div"> = VoidProps<
 	CheckboxControlProps<T> & { class?: string }

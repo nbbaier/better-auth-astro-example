@@ -217,7 +217,7 @@ function EditUserDialog(props: { user?: User }) {
 									: undefined,
 								name: name(),
 								fetchOptions: {
-									onResponse(context) {
+									onResponse(_context) {
 										setIsLoading(false);
 									},
 									onError(context) {
@@ -243,7 +243,7 @@ function EditUserDialog(props: { user?: User }) {
 
 function AddPasskeyDialog() {
 	const [name, setName] = createSignal("");
-	const [isLoading, setIsLoading] = createSignal(false);
+	const [isLoading, _setIsLoading] = createSignal(false);
 	return (
 		<Dialog>
 			<DialogTrigger>
@@ -346,7 +346,7 @@ function ListPasskeys() {
 									<TableCell class="text-right">
 										<button
 											onClick={async () => {
-												const res = await passkeyActions.deletePasskey({
+												const _res = await passkeyActions.deletePasskey({
 													id: passkey.id,
 													fetchOptions: {
 														onRequest: () => {
@@ -438,7 +438,7 @@ function TwoFactorDialog(props: { enabled?: boolean }) {
 								await twoFactorActions.disable({
 									password: password()!,
 									fetchOptions: {
-										onResponse(context) {
+										onResponse(_context) {
 											setIsLoading(false);
 										},
 										onError(context) {
@@ -455,7 +455,7 @@ function TwoFactorDialog(props: { enabled?: boolean }) {
 							await twoFactorActions.enable({
 								password: password()!,
 								fetchOptions: {
-									onResponse(context) {
+									onResponse(_context) {
 										setIsLoading(false);
 									},
 									onError(context) {

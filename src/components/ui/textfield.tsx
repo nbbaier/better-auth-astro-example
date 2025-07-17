@@ -25,7 +25,7 @@ export const TextFieldRoot = <T extends ValidComponent = "div">(
 	return <TextFieldPrimitive class={cn("space-y-1", local.class)} {...rest} />;
 };
 
-export const textfieldLabel = cva(
+const textfieldLabel = cva(
 	"text-sm data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70 font-medium",
 	{
 		variants: {
@@ -68,7 +68,7 @@ type textFieldErrorMessageProps<T extends ValidComponent = "div"> =
 		class?: string;
 	};
 
-export const TextFieldErrorMessage = <T extends ValidComponent = "div">(
+const TextFieldErrorMessage = <T extends ValidComponent = "div">(
 	props: PolymorphicProps<T, textFieldErrorMessageProps<T>>,
 ) => {
 	const [local, rest] = splitProps(props as textFieldErrorMessageProps, [
@@ -88,7 +88,7 @@ type textFieldDescriptionProps<T extends ValidComponent = "div"> =
 		class?: string;
 	};
 
-export const TextFieldDescription = <T extends ValidComponent = "div">(
+const TextFieldDescription = <T extends ValidComponent = "div">(
 	props: PolymorphicProps<T, textFieldDescriptionProps<T>>,
 ) => {
 	const [local, rest] = splitProps(props as textFieldDescriptionProps, [

@@ -1,5 +1,5 @@
-import { auth } from "@/auth";
 import { defineMiddleware } from "astro:middleware";
+import { auth } from "@/auth";
 
 // `context` and `next` are automatically typed
 export const onRequest = defineMiddleware(async (context, next) => {
@@ -7,7 +7,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 		.getSession({
 			headers: context.request.headers,
 		})
-		.catch((e) => {
+		.catch((_e) => {
 			return null;
 		});
 	if (context.url.pathname === "/dashboard" && !isAuthed) {

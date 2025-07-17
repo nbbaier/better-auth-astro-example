@@ -1,8 +1,14 @@
 ---
-import SignInCard from "../components/sign-in.astro";
+import { SignInCard } from "../components/sign-in.tsx";
 import RootLayout from "../layouts/root-layout.astro";
 ---
 
 <RootLayout>
    <SignInCard client:load />
 </RootLayout>
+
+<style>
+   :global(body) {
+      background-color: #f0f0f0;
+   }
+</style>

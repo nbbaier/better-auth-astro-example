@@ -1,3 +1,4 @@
+import { createSignal } from "solid-js";
 import {
 	Card,
 	CardContent,
@@ -6,11 +7,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { TextField, TextFieldLabel, TextFieldRoot } from "./ui/textfield";
-import { Button } from "./ui/button";
 import { signUp } from "@/libs/auth-client";
-import { createSignal } from "solid-js";
 import { convertImageToBase64 } from "@/libs/utils";
+import { Button } from "./ui/button";
+import { TextField, TextFieldLabel, TextFieldRoot } from "./ui/textfield";
 
 export function SignUpCard() {
 	const [firstName, setFirstName] = createSignal("");
@@ -18,7 +18,7 @@ export function SignUpCard() {
 	const [email, setEmail] = createSignal("");
 	const [password, setPassword] = createSignal("");
 	const [image, setImage] = createSignal<File>();
-	const [rememberMe, setRememberMe] = createSignal(false);
+
 	return (
 		<Card>
 			<CardHeader>
@@ -105,7 +105,7 @@ export function SignUpCard() {
 										onError(context) {
 											alert(context.error.message);
 										},
-										onSuccess(context) {
+										onSuccess(_context) {
 											window.location.href = "/";
 										},
 									},

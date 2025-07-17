@@ -32,7 +32,7 @@ export const OTPFieldGroup = (props: ComponentProps<"div">) => {
 	return <div class={cn("flex items-center", local.class)} {...rest} />;
 };
 
-export const OTPFieldSeparator = (props: ComponentProps<"div">) => {
+const OTPFieldSeparator = (props: ComponentProps<"div">) => {
 	return (
 		<div role="separator" {...props}>
 			<svg

@@ -28,7 +28,7 @@ export const TableBody = (props: ComponentProps<"tbody">) => {
 	);
 };
 
-export const TableFooter = (props: ComponentProps<"tfoot">) => {
+const TableFooter = (props: ComponentProps<"tfoot">) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
 	return (
@@ -81,7 +81,7 @@ export const TableCell = (props: ComponentProps<"td">) => {
 	);
 };
 
-export const TableCaption = (props: ComponentProps<"caption">) => {
+const TableCaption = (props: ComponentProps<"caption">) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
 	return (

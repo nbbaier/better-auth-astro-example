@@ -1,18 +1,24 @@
 ---
 import { auth } from "@/auth";
+import { UserCard } from "@/components/user-card";
+import RootLayout from "@/layouts/root-layout.astro";
 
 const activeSessions = await auth.api
-	.listSessions({
-		headers: Astro.request.headers,
-	})
-	.catch((e) => {
-		return [];
-	});
+   .listSessions({
+      headers: Astro.request.headers,
+   })
+   .catch((_e) => {
+      return [];
+   });
 const session = await auth.api.getSession({
-	headers: Astro.request.headers,
+   headers: Astro.request.headers,
 });
 ---
 
 <RootLayout>
-	<UserCard activeSessions={activeSessions} initialSession={session} client:only />
+   <UserCard
+      activeSessions={activeSessions}
+      initialSession={session}
+      client:only
+   />
 </RootLayout>
